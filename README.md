@@ -1,10 +1,14 @@
 SmartECommerceSystem
+=====================
 Overview
+-------------
 
 SmartECommerceSystem is a JavaFX-based desktop application for managing an e-commerce platform. It integrates relational (PostgreSQL) and NoSQL (MongoDB) databases to handle products, categories, orders, and user reviews. The system includes role-based access control, allowing administrators to manage products and categories while regular users can browse products, add items to their cart, place orders, and submit reviews.
 
 Features
+========
 User Features
+-------------
 
 User registration, login, and password reset.
 
@@ -18,7 +22,9 @@ Submit, view, and delete reviews.
 
 Validation and alert messages for input errors and system feedback.
 
+
 Administrator Features
+----------------------
 
 Add, edit, and delete products.
 
@@ -28,7 +34,9 @@ View and manage all orders, including updating status or deleting orders.
 
 Role-based access control to restrict sensitive actions.
 
+
 General Features
+----------------
 
 Integration with PostgreSQL for relational data (users, products, orders, categories).
 
@@ -40,7 +48,9 @@ Cart management across scenes.
 
 Alerts and confirmations for user actions.
 
+
 Technologies Used
+-----------------
 
 Java 21
 
@@ -60,9 +70,12 @@ TilesFX 21.0.9, FXGL 11.17, BootstrapFX 0.4.0, Ikonli 12.3.1 (UI enhancements)
 
 JUnit 5.12.1 (unit testing)
 
+
 Project Structure
+-----------------
 org.example.smartecommercesystem
 │
+├─ sql                 # Folder containing Entity Relational Diagram and SQL queries
 ├─ controller          # JavaFX controllers (ProductController, CartController, DashboardController, etc.)
 ├─ dao                 # Data access objects for PostgreSQL and MongoDB
 ├─ model               # Entity classes (User, Product, Category, Order, Review)
@@ -70,10 +83,12 @@ org.example.smartecommercesystem
 ├─ HelloApplication.java   # Main JavaFX application launcher
 └─ resources
     ├─ fxml            # FXML UI files
-    └─ css             # Optional styling files
+   
 
 Database Design
+===============
 PostgreSQL
+----------
 
 Users: Stores user information, passwords (hashed), and roles.
 
@@ -85,8 +100,9 @@ Orders: Linked to users, contains order items, total, status, and timestamps.
 
 OrderItems: Details for products within each order.
 
-MongoDB
 
+MongoDB
+-------
 Reviews: Stores product reviews including user ID, rating, comment, product ID, and timestamp.
 
 Installation & Setup
@@ -98,6 +114,7 @@ cd SmartECommerceSystem
 
 
 Setup PostgreSQL database:
+--------------------------
 
 Create a database for the application.
 
@@ -105,7 +122,9 @@ Configure tables for users, products, categories, orders, and order items.
 
 Update database connection details in DAO classes.
 
+
 Setup MongoDB database:
+-----------------------
 
 Ensure MongoDB is running locally or remotely.
 
@@ -115,7 +134,9 @@ Build & Run with Maven:
 
 mvn clean javafx:run
 
+
 Usage
+-----
 
 Launch the application to open the Sign Up page.
 
@@ -129,7 +150,9 @@ Add products to the cart, view total prices, and place orders.
 
 Submit reviews for products; only the user who created a review can delete it.
 
+
 Code Highlights
+---------------
 
 Session Management: Ensures a single logged-in user is tracked throughout the application.
 
@@ -141,13 +164,11 @@ OrderController: Allows admins to update order statuses and delete orders.
 
 Alerts: Comprehensive feedback to users for successful operations, errors, or invalid input.
 
-Future Improvements
 
-Persist cart data per user across sessions.
+Future Improvements
+-------------------
 
 Add product image upload and display.
-
-Enhance search functionality for products and categories.
 
 Implement notifications for order status changes.
 
